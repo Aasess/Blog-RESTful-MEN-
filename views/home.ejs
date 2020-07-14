@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">MY BLOGS</h1>
+      <p class="lead">I love to write some blogs when I get some time and read some useful contents.</p>
+        <a class="btn btn-primary btn-lg" href="/blogs/new">Add Blog</a>
+    </div>
+  </div>
+<br>
+<div class="container">
+  <div class="row">
+    <% blogs.forEach(function(blog){ %>
+      <div class="col-lg-4 col-md-6 col-sm-12 pb-3">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= blog.image%>" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+            <p class="card-text"><%= blog.content.slice(0,50) %>...</p>
+            <a href="/blogs/<%=blog._id %>" class="btn btn-info">Read More</a>
+          </div>
+        </div>
+      </div>
+  <%})%>
+  </div>
+  <br>
+  <hr/>
+</div>
+<%- include("partials/footer.ejs") %>

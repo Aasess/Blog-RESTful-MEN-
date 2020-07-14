@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs")%>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"><%= specificblog.title.toUpperCase() %></h1>
+      <small class="text-muted"><i class="clock icon"></i><%= specificblog.datecreated.toDateString() %></small>
+    </div>
+    <a href="/blogs/<%= specificblog._id %>/edit" class="btn btn btn-outline-dark mt-3 ml-4">Edit</a>
+    <a href="/blogs/<%= specificblog._id %>/delete" class="btn btn-outline-danger mt-3 ml-3">Delete</a>
+  </div>
+<div class="container text-center">
+    <img src="<%= specificblog.image %>" class="img-fluid img-thumbnail mb-4" alt="Responsive image">
+    <p class="text-left"><%- specificblog.content %></p>
+</div>
+<hr>
+<%- include("partials/footer.ejs")%>

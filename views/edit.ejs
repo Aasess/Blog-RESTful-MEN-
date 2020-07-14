@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container mt-5 mb-3 border rounded">
+    <h1 class="display-4 text-center">UPDATE BLOG</h1>
+    <hr>
+    <form method="POST" action="/blogs/<%= blog._id%>?_method=PUT">
+        <div class="form-group">
+            <label><strong>Title</strong></label>
+            <input type="text" name="title" class="form-control" value="<%= blog.title %>">
+        </div>
+        <div class="form-group">
+            <label><strong>ImageURL</strong></label>
+            <input type="text" name="image" class="form-control" value="<%= blog.image %>">
+        </div>
+        <div class="form-group">
+            <label><strong>Content</strong></label>
+            <textarea name="content" class="form-control"><%= blog.content %></textarea>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Edit</button>       
+        </div>
+    </form>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") %>
+<form method="POST" action="/blogs/<%= blog._id %>?_method=DELETE">
+<div class="container border mt-5 mb-3 rounded">
+    <h3 class="text-center">Delete -<%= blog.title %>?</h3>
+    <hr/>
+    <div class="row mb-3">
+        <div class="col text-right">
+            <button class="btn btn btn-outline-danger">Delete</button>
+        </div>
+        <div class="col text-left">
+            <a href="/blogs/<%= blog._id %>" class="btn btn btn-outline-secondary">Cancel</a>
+        </div>
+        </div>
+</div>
+</form>
+
+<%- include("partials/footer.ejs") %>
